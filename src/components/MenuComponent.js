@@ -3,7 +3,7 @@ import {
   Card, CardImg, CardImgOverlay,
   CardTitle
 } from 'reactstrap';
-import DishDetail from './DishdetailComponent ';
+
 
 class Menu extends Component {
 
@@ -11,12 +11,8 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      selectedDish: null
-    }
-  }
 
-  onDishSelect(dish) {
-    this.setState({ selectedDish: dish });
+    }
   }
 
 
@@ -25,7 +21,7 @@ class Menu extends Component {
       return (
         <div className="col-12 col-md-5 m-1" key={dish.id}>
           <Card
-            onClick={() => this.onDishSelect(dish)}
+            onClick={() => this.props.onClick(dish.id)}
           >
             <CardImg width="100%" src={dish.image} alt={dish.name} />
             <CardImgOverlay>
@@ -41,7 +37,6 @@ class Menu extends Component {
         <div className="row">
           {menu}
         </div>
-        <DishDetail selectedDish={this.state.selectedDish} />
       </div>
     );
   }

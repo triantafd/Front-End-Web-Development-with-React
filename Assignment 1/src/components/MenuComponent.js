@@ -3,7 +3,7 @@ import {
   Card, CardImg, CardImgOverlay,
   CardTitle
 } from 'reactstrap';
-import DishDetail from './DishdetailComponent ';
+import DishDetail from './DishdetailComponent';
 
 class Menu extends Component {
 
